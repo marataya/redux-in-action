@@ -7,6 +7,16 @@ import * as api from '../api'
 //   return _id++
 // }
 
+
+export function editTaskSucceeded(task) {
+  return {
+    type: 'EDIT_TASK_SUCCEEDED',
+    payload: {
+      task,
+    }
+  }
+}
+// old sync function
 // export function editTask(id, params = {}) {
 //   return {
 //     type: 'EDIT_TASK',
@@ -16,15 +26,6 @@ import * as api from '../api'
 //     }
 //   }
 // }
-
-export function editTaskSucceeded(task) {
-  return {
-    type: 'EDIT_TASK',
-    payload: {
-      task,
-    }
-  }
-}
 
 export function editTask(id, params = {}) {
   return (dispatch, getState) => {
@@ -69,7 +70,7 @@ function createTaskSucceeded(task) {
   }
 }
 
-// old sync version
+// old sync function
 // export function createTask({ title, description }) {
 //   return {
 //     type: 'CREATE_TASK',
